@@ -1,0 +1,20 @@
+sudo: require
+dist: xenial
+language: bash
+
+# Montana Mendy runs lint (travis lint)
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y texlive-base texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra
+
+script:
+  - bash gen_about.sh ./ about
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: main
