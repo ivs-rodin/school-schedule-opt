@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+\renewcommand\refname{References and Notes}
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+\title{Optimizing School Schedule Generation: A Mathematical Modeling Approach} 
+
+\author
+{Ivan Rodin$^{1\ast}$\\
+\\
+\normalsize{$^{1}$Mathematical optimization developer}\\
+\\
+\normalsize{$^\ast$To whom correspondence should be addressed; E-mail:  ???.}
+}
+
+\date{???}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+\baselineskip24pt
+
+\maketitle 
+
+
+\begin{sciabstract}
+  Scheduling classes and teachers is a challenging problem for schools. With growing student enrollment, there is a need for efficient scheduling practices that meet the school's constraints and requirements. This paper presents a mathematical optimization model for generating optimal schedules using linear and nonlinear programming techniques. The model is implemented using the Pyomo library and solved using optimization solvers such as Gurobi, CPLEX, or HIGHS. The objective of the project is to automate the scheduling process, reducing the time and effort required to generate schedules and minimizing the risk of errors. The results of the optimization model are discussed, highlighting the potential benefits of the proposed solution. This project makes a valuable contribution to the field of scheduling and optimization and serves as a useful reference for schools and researchers.
+\end{sciabstract}
+
+
+\section*{Introduction}
+
+Scheduling classes and teachers is a complex problem that requires a systematic approach to ensure that the school operates smoothly. With increasing student enrolment, the demand for efficient scheduling practices has never been greater. While manual scheduling may have worked in the past, it is no longer a viable solution in today's fast-paced and demanding educational environment. The solution lies in the application of mathematical optimization, which offers a systematic and efficient method to generate schedules that meet the school's requirements.
+
+The optimization model will be formulated using linear programming techniques to ensure that the schedule generated meets the constraints and requirements of the school. The model will be implemented using the Pyomo library, which offers a flexible and user-friendly environment for building and solving optimization models. The optimization solvers such as Gurobi, CPLEX, or HIGHS will then be used to solve the model and generate the optimal schedule.
+
+The objective of this project is to provide a practical solution to the scheduling problem faced by schools. The goal is to automate the scheduling process, reducing the time and effort required to generate schedules, and minimizing the risk of errors. This project will make a valuable contribution to the field of scheduling and optimization, and it is hoped that the results will be of interest to schools, researchers, and practitioners alike.
+
+This paper will provide a comprehensive overview of the problem of scheduling classes and teachers in a school, including a discussion of the constraints and requirements that must be considered when generating a schedule. The mathematical formulation of the optimization model will be presented in detail, along with an overview of recent work in this area. The results of the optimization model will be discussed, and the potential benefits of the proposed solution will be highlighted. Overall, this project will provide a valuable contribution to the field of scheduling and optimization, and it is hoped that it will serve as a useful reference for schools and researchers.
+
+
+\bibliography{scibib}
+
+\bibliographystyle{Science}
+
+
+\end{document}
