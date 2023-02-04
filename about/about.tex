@@ -6,6 +6,8 @@
 \textheight 21cm
 \footskip 1.0cm
 
+\renewcommand{\baselinestretch}{0.7} 
+
 \newenvironment{sciabstract}{%
 \begin{quote} \bf}
 {\end{quote}}
@@ -68,7 +70,46 @@ Thus, the issue of composing a school schedule has become highly relevant in our
 
 \section{Problem formulation}
 
-Определим основные множества, используемые в модели. Пусть $S$ -- множество учеников, $T$ -- множество учителей. Введем также множество $C$ -- множество существующих предметов, а $R$ -- множество кабинетов в школе. Пусть $K$ -- множество учебных классов в школе. Для времени введем множество даты $D$ и множество порядковых номеров интервалов $I$. Под интервалом понимается промежуток времени, в которой проводится урок. Это может быть час или 45 минут или любой другой интервал.
+We will now define the main sets used in the model.
+
+\begin{itemize}
+  \setlength\itemsep{0.05em}
+    \item $S$ -- the set of students;
+    \item $T$ -- the set of teachers;
+    \item $C$ -- the set of courses;
+    \item $R$ -- the set of classrooms;
+    \item $G$ -- the set of groups;
+    \item $D$ -- the set of days;
+    \item $I$ -- the set of intervals, which can be an hour, 45 minutes, or any other time frame.
+\end{itemize}
+
+Each element in the sets introduced above represents a class. Each class has certain properties, which we will refer to as model parameters.
+
+\begin{itemize}
+    \setlength\itemsep{0.05em}
+    \item For each student $s$ in set $S$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $P \subseteq C$ -- the set of courses that the student needs to learn (student program);
+        \item $g \in G$ -- the student's group.
+    \end{itemize}
+    \item For each teacher $t$ in set $T$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $Q \subseteq C$ -- the set of courses in which the teacher has the necessary qualifications.
+    \end{itemize}
+    \item For each classroom $r$ in set $R$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $A \subseteq C$ -- the set of courses that can be taught in the classroom.
+    \end{itemize}
+    \item For each day $d$ in set $D$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $DI \subseteq I$ -- the set of intervals that are available on the day.
+    \end{itemize}
+    
+\end{itemize}
 
 \section{Baseline approach}
 
