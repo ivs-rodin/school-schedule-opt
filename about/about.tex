@@ -93,22 +93,26 @@ Each element in the sets introduced above represents a class. Each class has cer
         \item $P \subseteq C$ -- the set of courses that the student needs to learn (student program);
         \item $g \in G$ -- the student's group.
     \end{itemize}
+
     \item For each teacher $t$ in set $T$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
         \item $Q \subseteq C$ -- the set of courses in which the teacher has the necessary qualifications.
     \end{itemize}
+    
     \item For each classroom $r$ in set $R$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
-        \item $A \subseteq C$ -- the set of courses that can be taught in the classroom.
+        \item $A \subseteq C$ -- the set of courses that can be taught in the classroom;
+        \item $capacity$ -- the maximum count of students in the classroom;
     \end{itemize}
+
     \item For each day $d$ in set $D$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
         \item $DI \subseteq I$ -- the set of intervals that are available on the day.
     \end{itemize}
-    
+
 \end{itemize}
 
 \section{Baseline approach}
