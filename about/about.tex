@@ -76,7 +76,9 @@ We will now define the main sets used in the model.
   \setlength\itemsep{0.05em}
     \item $STUDENTS$ -- the set of students;
     \item $TEACHERS$ -- the set of teachers;
+    \item $SUBJECTS$ -- the set of teachers;
     \item $COURSES$ -- the set of courses;
+    \item $PROGRAMMS$ -- the set of programms;
     \item $ROOMS$ -- the set of classrooms;
     \item $GROUPS$ -- the set of groups;
     \item $DAYS$ -- the set of days;
@@ -90,21 +92,34 @@ Each element in the sets introduced above represents a class. Each class has cer
     \item For each student $s$ in set $STUDENTS$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
-        \item $P \subseteq COURSES$ -- the set of courses that the student needs to learn (student program);
+        \item $p \in PROGRAMMS$ -- the student's programm;
         \item $g \in GROUPS$ -- the student's group.
     \end{itemize}
 
     \item For each teacher $t$ in set $TEACHERS$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
-        \item $Q \subseteq COURSES$ -- the set of courses in which the teacher has the necessary qualifications;
+        \item $S \subseteq SUBJECTS$ -- the set of subjects in which the teacher has the necessary qualifications;
         \item $D \subseteq DAYS$ -- the set of available days;
+    \end{itemize}
+
+    \item For each course $c$ in set $COURSES$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $s \in SUBJECTS$ -- the subject of this course;
+        \item $d$ -- number of days for end course;
+    \end{itemize}
+
+    \item For each programm $p$ in set $PROGRAMMS$, the following properties are defined:
+    \begin{itemize}
+        \setlength\itemsep{0.05em}
+        \item $C \subseteq COURSES$ -- the set of courses for this programm;
     \end{itemize}
     
     \item For each classroom $r$ in set $ROOMS$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
-        \item $A \subseteq COURSES$ -- the set of courses that can be taught in the classroom;
+        \item $A \subseteq SUBJECTS$ -- the set of subjects that can be taught in the classroom;
         \item $capacity$ -- the maximum count of students in the classroom;
     \end{itemize}
 
