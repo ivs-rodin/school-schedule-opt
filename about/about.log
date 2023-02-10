@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2023.2.9)  9 FEB 2023 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2023.2.10)  10 FEB 2023 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -65,7 +65,7 @@ No file about.bbl.
 [3] (./about.aux) ) 
 Here is how much of TeX's memory you used:
  255 strings out of 494953
- 2829 string characters out of 6180978
+ 2829 string characters out of 6180977
  52390 words of memory out of 5000000
  3613 multiletter control sequences out of 15000+600000
  7588 words of font info for 27 fonts, out of 8000000 for 9000
