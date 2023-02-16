@@ -8,7 +8,7 @@ class SchoolScheduleOptModel:
             self.subject = subject
             self.days = days
 
-    class Programm:
+    class Program:
         def __init__(self, courses):
             self.courses = courses
 
@@ -18,10 +18,10 @@ class SchoolScheduleOptModel:
             self.students = students
 
     class Student:
-        def __init__(self, student_name, student_surname, student_programm):
+        def __init__(self, student_name, student_surname, student_program):
             self.name = student_name
             self.surname = student_surname
-            self.programm = student_programm
+            self.program = student_program
 
     class Teacher:
         def __init__(self, teacher_name, teacher_surname, teacher_subjects, teacher_days):
@@ -45,14 +45,10 @@ class SchoolScheduleOptModel:
 
         self.fill_model(data)
 
-
     def read_data(self):
-        #TODO: Read data from database
+        # TODO: Read data from database
         pass
 
     def fill_model(self, data):
-        #TODO: Fill model with data
+        # TODO: Fill model with data
         pass
-    
-
-
