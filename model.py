@@ -39,6 +39,10 @@ class SchoolScheduleOptModel:
     class Day:
         def __init__(self, day_intervals):
             self.intervals = day_intervals
+        
+    class Interval:
+        def __init__(self, iterval_datetime):
+            self.datetime = iterval_datetime
     
     def __init__(self):
         data = self.read_data()
