@@ -1,3 +1,6 @@
+from pyomo.environ import Var, ConcreteModel
+from datetime import datetime
+
 class SchoolScheduleOptModel:
     class Subject:
         def __init__(self, subject_name):
@@ -35,14 +38,25 @@ class SchoolScheduleOptModel:
             self.name = room_name
             self.capacity = room_capacity
             self.subjects = room_subjects
-
-    class Day:
-        def __init__(self, day_intervals):
-            self.intervals = day_intervals
         
-    class Interval:
-        def __init__(self, iterval_datetime):
-            self.datetime = iterval_datetime
+    class Date:
+        def __init__(self, date_dt):
+            self.dateDt = date_dt
+            #TODO: Add str date
+        #TODO: Add __add__ for date+1
+        
+    class Time:
+        def __init__(self, time_dt):
+            self.timeDt = time_dt
+            #TODO: Add str time
+        #TODO: Add __add__ for time+1
+
+    class Datetime:
+        def __init__(self, date_dt, time_dt):
+            self.date = Date(date_dt)
+            self.time = Time(time_dt)
+        #TODO: Add comp Datetimes
+
     
     def __init__(self):
         data = self.read_data()
@@ -55,4 +69,7 @@ class SchoolScheduleOptModel:
 
     def fill_model(self, data):
         # TODO: Fill model with data
+
+        model = ConcreteModel()
+
         pass
