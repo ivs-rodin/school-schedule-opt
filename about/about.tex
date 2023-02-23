@@ -81,8 +81,7 @@ We will now define the main sets used in the model.
     \item $PROGRAMS$ -- the set of programs;
     \item $ROOMS$ -- the set of classrooms;
     \item $GROUPS$ -- the set of groups;
-    \item $DAYS$ -- the set of days;
-    \item $INTERVALS$ -- the set of intervals, which can be an hour, 45 minutes, or any other time frame.
+    \item $DATETIMES$ -- the set of days and avilable slot times;
 \end{itemize}
 
 Each element in the sets introduced above represents a class. Each class has certain properties, which we will refer to as model parameters.
@@ -100,7 +99,7 @@ Each element in the sets introduced above represents a class. Each class has cer
     \begin{itemize}
         \setlength\itemsep{0.05em}
         \item $S \subseteq SUBJECTS$ -- the set of subjects in which the teacher has the necessary qualifications;
-        \item $D \subseteq DAYS$ -- the set of available days;
+        \item $D \subseteq DATETIMES$ -- the set of available days and times;
         \item $R \subseteq ROOMS$ -- the set of classrooms where the teacher can teach; 
     \end{itemize}
 
@@ -124,10 +123,11 @@ Each element in the sets introduced above represents a class. Each class has cer
         \item $capacity$ -- the maximum count of students in the classroom;
     \end{itemize}
 
-    \item For each day $d$ in set $DAYS$, the following properties are defined:
+    \item For each datetime $dt$ in set $DATETIMES$, the following properties are defined:
     \begin{itemize}
         \setlength\itemsep{0.05em}
-        \item $I \subseteq INTERVALS$ -- the set of intervals that are available on the day.
+        \item $d$ -- day of the datetime;
+        \item $t$ -- time of the datetime.
     \end{itemize}
 
 \end{itemize}
