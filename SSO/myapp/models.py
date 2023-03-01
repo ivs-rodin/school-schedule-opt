@@ -1,4 +1,5 @@
-from datetime import date
+# school-schedule-opt/sso/myapp/models.py
+
 
 from django.db import models
 
