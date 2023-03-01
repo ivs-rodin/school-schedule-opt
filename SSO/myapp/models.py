@@ -40,5 +40,13 @@ class Program(models.Model):
 
     courses = models.ManyToManyField(Course)
 
+class Classroom(models.Model):
+    name = models.CharField(max_length=100)
+    notes = models.TextField()
+    subjects = models.ManyToManyField(Subject)
+
+    def __str__(self):
+        return self.name
+
 class Datetime(models.Model):
     datetime = models.DateTimeField(db_column="created_at")
