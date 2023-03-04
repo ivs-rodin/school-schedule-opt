@@ -16,6 +16,7 @@ The project will be developed using the following libraries and techniques:
 - Pandas
 - requests
 - HTML, CSS, JavaScript (for front-end web development)
+- Django DB
 
 
 The project is open-source, and contributions are welcome. However, please note that the private algorithm will not be available for public use.
