@@ -32,16 +32,25 @@ class Teacher(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.name
+
 class Course(models.Model):
     name = models.CharField(max_length=100)
     days = models.IntegerField()
 
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 class Program(models.Model):
     name = models.CharField(max_length=100)
 
     courses = models.ManyToManyField(Course)
+
+    def __str__(self):
+        return self.name
 
 class Classroom(models.Model):
     name = models.CharField(max_length=100)
