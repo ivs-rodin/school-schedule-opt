@@ -1,6 +1,5 @@
 # school-schedule-opt/sso/myapp/models.py
 
-
 from django.db import models
 
 class Group(models.Model):
@@ -25,6 +24,7 @@ class Teacher(models.Model):
     notes = models.TextField()
 
     slots = models.ManyToManyField(Datetime)
+    subjects = models.ManyToManyField(Subject)
 
     def __str__(self):
         return self.name
