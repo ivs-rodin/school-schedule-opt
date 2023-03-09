@@ -71,14 +71,20 @@ class SchoolScheduleOptModel:
     def fill_model(self):
         # TODO: Fill model with data
 
-        self.setStudents = {Student(s['name'], s['surname'], s['courses']) for s in self.data['students'].values()}
-        self.setTeachers = {Teacher(t['name'], t['surname'], t['subjects'], t['days']) for t in self.data['teachers'].values()}
-        self.setClassrooms = {Classroom(r['name'], r['capacity'], r['subjects']) for r in self.data['rooms']}
+        self.setStudents = {s['id'] for s in self.data['students']}
+        self.setTeachers = {t['id'] for t in self.data['teachers']}
+
         self.setSubjects = self.get_subjects()
+        self.setClassrooms = self.get_classrooms()
 
         self.model = ConcreteModel()
 
         pass
 
     def get_subjects(self):
-        return {s for subjects in self.setStudents.program.subjects for s in subjects}
+        sjFromStudent = {c.subject['id'] for c in s.courses for s in self.data['students']}
+        return {sj['id'] for sj in self.data['sbujects'] if sj['id'] in sjFromStudent}
+
+    def get_classrooms(self):
+        crFromSubjects = {cr for cr in self.data['classrooms'] if self.setSubjects.intersection({sj['id'] for sj in cr.subjects})}
+        return crFromSubjects
