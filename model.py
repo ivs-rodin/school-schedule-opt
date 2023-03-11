@@ -72,10 +72,12 @@ class SchoolScheduleOptModel:
         # TODO: Fill model with data
 
         self.setStudents = {s['id'] for s in self.data['students']}
-        self.setTeachers = {t['id'] for t in self.data['teachers']}
 
         self.setSubjects = self.get_subjects()
+        self.setTeachers = self.get_teachers()
         self.setClassrooms = self.get_classrooms()
+        self.setStudentDatetimes = self.get_student_datetimes()
+        self.setTeacherDatetimes = self.get_teacher_datetimes()
 
         self.model = ConcreteModel()
 
@@ -83,8 +85,21 @@ class SchoolScheduleOptModel:
 
     def get_subjects(self):
         sjFromStudent = {c.subject['id'] for c in s.courses for s in self.data['students']}
-        return {sj['id'] for sj in self.data['sbujects'] if sj['id'] in sjFromStudent}
+        subjects = {sj['id'] for sj in self.data['sbujects'] if sj['id'] in sjFromStudent}
+        return subjects
+
+    def get_teachers():
+        teachers = {t['id'] for t in self.data['teachers'] if self.setSubjects.intersection({sj['id'] for sj in t.subjects})}
+        return teachers
+        
 
     def get_classrooms(self):
         crFromSubjects = {cr for cr in self.data['classrooms'] if self.setSubjects.intersection({sj['id'] for sj in cr.subjects})}
         return crFromSubjects
+
+    def get_student_datetimes(self):
+        sDatetimes = {sl['datetime'] for sl in s['slots'] for s in self.setStudents if sl['datetime'] in self.data['datetimes']}
+        return sDatetimes
+
+    def get_teacher_datetimes(self):
+        tDatetimes = {sl['datetime'] for sl in t['slots'] for t in self.setTeachers if sl['datetime'] in self.setStudentDatetimes}
