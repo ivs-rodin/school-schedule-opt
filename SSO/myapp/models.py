@@ -13,6 +13,7 @@ class Student(models.Model):
     surname = models.CharField(max_length=100)
     notes = models.TextField()
 
+    slots = models.ManyToManyField(Datetime)
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
 
     def __str__(self):
